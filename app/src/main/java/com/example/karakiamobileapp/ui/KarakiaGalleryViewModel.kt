@@ -26,12 +26,12 @@ class KarakiaGalleryViewModel @ViewModelInject constructor(
     val karakias = karakiasFlow.asLiveData() //get karakias from database
 
     fun onKarakiaSelected(karakia: Karakia) = viewModelScope.launch {
-        karakiaEventChannel.send(KarakiaEvent.NavigateToFragmentKarakiaDetails)
+        karakiaEventChannel.send(KarakiaEvent.NavigateToFragmentKarakiaDetails(karakia))
     }
 
     //enum but can store data, lists of events
     sealed class KarakiaEvent {
-        object NavigateToFragmentKarakiaDetails : KarakiaEvent()
+        data class NavigateToFragmentKarakiaDetails(val karakia: Karakia) : KarakiaEvent()
     }
 
 }

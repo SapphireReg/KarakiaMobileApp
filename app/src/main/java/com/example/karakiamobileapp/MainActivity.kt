@@ -15,13 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment //access nav controller on mainactivity oncreate
+        navController = navHostFragment.findNavController()
 
-    val navHostFragment =
-        supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment //access nav controller on mainactivity oncreate
-    navController = navHostFragment.findNavController()
-
-    setupActionBarWithNavController(navController)
-    }
+        setupActionBarWithNavController(navController)
+        }
 
 override fun onSupportNavigateUp(): Boolean {
     return navController.navigateUp() || super.onSupportNavigateUp()

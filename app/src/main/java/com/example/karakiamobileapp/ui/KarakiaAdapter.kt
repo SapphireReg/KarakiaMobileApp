@@ -40,7 +40,7 @@ class KarakiaAdapter (private val listener: OnItemClickListener
 
         fun bind(karakia: Karakia) {
             binding.apply {
-                videoPreview.setImageResource(karakia.videoResource)
+                videoPreview.setImageResource(karakia.imageResource)
                 videoTitle.text = karakia.title
                 shortDescription.text = karakia.shortDescription
             }

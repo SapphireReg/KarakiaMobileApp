@@ -1,5 +1,7 @@
 package com.example.karakiamobileapp.data
 
+import android.content.Context
+import android.net.Uri
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -12,18 +14,20 @@ import javax.inject.Provider
 
 
 @Database(entities = [Karakia::class], version = 1)
-abstract class KarakiaDatabase : RoomDatabase() {
+abstract class KarakiaDatabase() : RoomDatabase() {
 
     abstract fun karakiaDao() : KarakiaDao
 
     class Callback @Inject constructor(
         private val database: Provider<KarakiaDatabase>,
         @AppModule.ApplicationScope private val applicationScope: CoroutineScope
-    ) : RoomDatabase.Callback() { //tells dagger to create instance t ocalss and pass dependencies if defined in constructor
+    ) : RoomDatabase.Callback() { //tells dagger to create instance to class and pass dependencies if defined in constructor
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
             val dao = database.get().karakiaDao()
+
+
 
             applicationScope.launch {
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1, R.raw.verse1, R.raw.verse1,
