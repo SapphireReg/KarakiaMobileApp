@@ -87,25 +87,6 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
-    <!--    Verses Hidden View -->
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/hidden_verses"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/verses_parent">
-
-        <TextView
-            android:id="@+id/verses_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="This is a Test"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:visibility="gone" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <!--    Divider Line -->
     <View
@@ -154,12 +135,39 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
+
+    <!--    Divider Line -->
+    <View
+        android:id="@+id/group_divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/english_parent"
+        android:background="#2B2B2B" />
     <!--    Verses Hidden View -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/hidden_verses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/karakia_info">
+
+        <TextView
+            android:id="@+id/verses_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:text="This is a Test"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--    Translation Hidden View -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/hidden_translation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/verses_parent">
+        android:layout_below="@id/karakia_info">
 
         <TextView
             android:id="@+id/translation_text"
@@ -169,17 +177,8 @@
             android:text="This is a Test"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="15sp"
-            android:visibility="gone" />
+            android:textSize="15sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <!--    Divider Line -->
-    <View
-        android:id="@+id/group_divider3"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@+id/english_parent"
-        android:background="#2B2B2B" />
 
 </RelativeLayout>

@@ -3,22 +3,23 @@ package com.example.karakiamobileapp.ui
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import androidx.cardview.widget.CardView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import com.example.karakiamobileapp.R
 import com.example.karakiamobileapp.databinding.FragmentKarakiaDetailsBinding
+import java.io.*
+
 
 class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
 
     //card views
-    private lateinit var versesHiddenView: LinearLayout
-    private lateinit var translationHiddenView: LinearLayout
+    private lateinit var versesHiddenView: TextView
+    private lateinit var translationHiddenView: TextView
 
     private val args by navArgs<KarakiaDetailsFragmentArgs>()
 
@@ -29,13 +30,24 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
 
         binding.apply {
             val karakia = args.karakia
+            var videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.videoResource)
+            var verseUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/"  + karakia.verses)
+            var englishUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.english)
 
-            karakiaVideo.setVideoURI(
-                Uri.parse("android.resource://"
-                    + activity?.packageName + "/" + karakiaVideo))
+            fun readTextFileToString(uri: Uri): String {
+                val inputStream: InputStream = File(uri.path!!).inputStream()
+                var fileText = ""
+
+                inputStream.bufferedReader().forEachLine { fileText += it + "\n" }
+                return fileText
+            }
+
+            karakiaVideo.setVideoURI(videoUri)
             videoTitle.text = karakia.title
-            versesText.text = karakia.verses.toString()
-            translationText.text = karakia.english.toString()
+            versesText.text = readTextFileToString(verseUri)
+            translationText.text = readTextFileToString(englishUri)
+
+            versesHiddenView = view.findViewById(R.id.verses_text)
 
             versesButton.setOnClickListener {
                 // If the CardView is already expanded, set its visibility
@@ -56,6 +68,8 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
                     versesButton.setImageResource(R.drawable.expand_more)
                 }
             }
+
+            translationHiddenView = view.findViewById(R.id.translation_text)
 
             translationButton.setOnClickListener {
                 // If the CardView is already expanded, set its visibility

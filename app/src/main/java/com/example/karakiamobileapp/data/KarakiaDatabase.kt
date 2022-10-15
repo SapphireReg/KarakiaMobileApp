@@ -26,22 +26,22 @@ abstract class KarakiaDatabase : RoomDatabase() {
             val dao = database.get().karakiaDao()
 
             applicationScope.launch {
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                         "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid2, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid2, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                         "Karakia Title2", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid3, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid3, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                         "Karakia Title2", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid4, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid4, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                     "Karakia Title2", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid5, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid5, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                     "Karakia Title2", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid6, R.raw.audio1, R.raw.verse1, R.raw.verse1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid6, R.raw.audio1, R.raw.opening_karakia_timatanga_1_maori, R.raw.opening_karakia_timatanga_1_english,
                     "Karakia Title2", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
             }
