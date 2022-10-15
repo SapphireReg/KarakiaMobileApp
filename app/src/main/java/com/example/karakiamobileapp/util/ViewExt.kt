@@ -1,4 +1,4 @@
-package com.example.karakiamobileapp.data
+package com.example.karakiamobileapp.util
 
 import androidx.appcompat.widget.SearchView
 

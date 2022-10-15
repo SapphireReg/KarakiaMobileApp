@@ -9,8 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.karakiamobileapp.R
 import com.example.karakiamobileapp.data.Karakia
-import com.example.karakiamobileapp.data.exhaustive
 import com.example.karakiamobileapp.databinding.FragmentKarakiaGalleryBinding
+import com.example.karakiamobileapp.util.exhaustive
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 

@@ -2,21 +2,21 @@ package com.example.karakiamobileapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.karakiamobileapp.data.Karakia
 import com.example.karakiamobileapp.databinding.FragmentKarakiaBinding
-import com.example.karakiamobileapp.databinding.FragmentKarakiaGalleryBinding
 
 
-class KarakiaAdapter (private val listener: OnItemClickListener
-    ) : ListAdapter<Karakia, KarakiaAdapter.KarakiaViewHolder>(DiffCallback()) {
+class KarakiaAdapter(
+    private val listener: OnItemClickListener
+) : ListAdapter<Karakia, KarakiaAdapter.KarakiaViewHolder>(DiffCallback()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KarakiaViewHolder {
-        val binding = FragmentKarakiaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FragmentKarakiaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return KarakiaViewHolder(binding)
     }
 
@@ -25,11 +25,12 @@ class KarakiaAdapter (private val listener: OnItemClickListener
         holder.bind(currentItem)
     }
 
-    inner class KarakiaViewHolder(private val binding: FragmentKarakiaBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class KarakiaViewHolder(private val binding: FragmentKarakiaBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
             binding.apply {
-                root.setOnClickListener() {
+                root.setOnClickListener {
                     val position = adapterPosition
                     val karakia = getItem(position)
                     listener.onItemClick(karakia)
@@ -48,7 +49,7 @@ class KarakiaAdapter (private val listener: OnItemClickListener
     }
 
     interface OnItemClickListener {
-        fun onItemClick (karakia: Karakia)
+        fun onItemClick(karakia: Karakia)
     }
 
     class DiffCallback : DiffUtil.ItemCallback<Karakia>() { //detect changes between items

@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides //tells dagger this is instruction function
-    @Singleton //only creates 1 istance of databse
+    @Singleton //only creates 1 instance of database
     fun  provideDatabase(
         app: Application,
         callback: KarakiaDatabase.Callback
@@ -34,9 +34,8 @@ object AppModule {
     @Provides
     @Singleton
     fun provideApplicationScope() = CoroutineScope(SupervisorJob())
-
+}
     @Retention(AnnotationRetention.RUNTIME) //interoperability
     @Qualifier
     annotation class ApplicationScope
 
-}

@@ -14,4 +14,10 @@ interface KarakiaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(karakia: Karakia) //suspend allows use of background thread, passed and used later on
 
+    @Update
+    fun update(karakia: Karakia)
+
+    @Delete
+    fun delete(karakia: Karakia)
+
 }
