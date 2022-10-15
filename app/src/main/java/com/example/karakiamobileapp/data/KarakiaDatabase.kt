@@ -20,7 +20,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
         private val database: Provider<KarakiaDatabase>,
         @AppModule.ApplicationScope private val applicationScope: CoroutineScope
     ) : RoomDatabase.Callback() { //tells dagger to create instance t ocalss and pass dependencies if defined in constructor
-        override fun OnCreate(db: SupportSQLiteDatabase) {
+        override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
             val dao = database.get().karakiaDao()

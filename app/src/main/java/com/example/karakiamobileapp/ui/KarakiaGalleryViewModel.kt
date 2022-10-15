@@ -21,7 +21,7 @@ class KarakiaGalleryViewModel @ViewModelInject constructor(
 
     val searchQuery = state.getLiveData("searchQuery", "")
 
-    private val karakiasFlow = searchQuery.asFlow().flatMapLatest { query -> karakiaDao.getKarakia(query) }
+    private val karakiasFlow = searchQuery.asFlow().flatMapLatest { query -> karakiaDao.getKarakiaByTitle(query) }
 
     val karakias = karakiasFlow.asLiveData() //get karakias from database
 

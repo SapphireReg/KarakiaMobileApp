@@ -10,4 +10,21 @@
         android:name="com.example.karakiamobileapp.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/karakiaGalleryFragment"
+        android:name="com.example.karakiamobileapp.ui.KarakiaGalleryFragment"
+        android:label="fragment_karakia_gallery"
+        tools:layout="@layout/fragment_karakia_gallery" >
+        <action
+            android:id="@+id/action_karakiaGalleryFragment_to_karakiaDetailsFragment"
+            app:destination="@id/karakiaDetailsFragment" />
+        <argument
+            android:name="karakia"
+            app:argType="com.example.karakiamobileapp.data.Karakia" />
+    </fragment>
+    <fragment
+        android:id="@+id/karakiaDetailsFragment"
+        android:name="com.example.karakiamobileapp.ui.KarakiaDetailsFragment"
+        android:label="fragment_karakia_details"
+        tools:layout="@layout/fragment_karakia_details" />
 </navigation>
