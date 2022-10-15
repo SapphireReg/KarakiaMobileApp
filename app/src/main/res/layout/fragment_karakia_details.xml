@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181818"
+    tools:context=".ui.details.DetailsFragment">
+
+    <VideoView
+        android:id="@+id/karakia_video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@raw/vid1" />
+
+    <RelativeLayout
+        android:id="@+id/karakia_info"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/karakia_video"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/video_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Karakia Title"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/long_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_title"
+            android:text="Description is here"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <!--    Divider Line -->
+    <View
+        android:id="@+id/group_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/karakia_info"
+        android:background="#2B2B2B" />
+
+    <!--    Verses Clickable View  -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/verses_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_divider"
+        app:cardBackgroundColor="#181818">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/verses_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="9"
+                android:text="Verses(Maori)"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/verses_card_view" />
+
+            <ImageButton
+                android:id="@+id/verses_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/expand_more" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <!--    Verses Hidden View -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/hidden_verses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/verses_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:text="This is a Test"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--    Divider Line -->
+    <View
+        android:id="@+id/group_divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/verses_parent"
+        android:background="#2B2B2B" />
+
+    <!--    Verses Clickable View  -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/english_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_divider2"
+        app:cardBackgroundColor="#181818">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/translation_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="9"
+                android:text="Translation(English)"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/translation_card_view" />
+
+            <ImageButton
+                android:id="@+id/translation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/expand_more" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <!--    Verses Hidden View -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/hidden_translation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/verses_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:text="This is a Test"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--    Divider Line -->
+    <View
+        android:id="@+id/group_divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/english_parent"
+        android:background="#2B2B2B" />
+
+</RelativeLayout>
