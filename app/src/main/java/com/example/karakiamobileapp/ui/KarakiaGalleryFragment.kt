@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
-class KarakiaGalleryFragment : Fragment(R.layout.fragment_karakia), KarakiaAdapter.OnItemClickListener {
+class KarakiaGalleryFragment : Fragment(R.layout.fragment_karakia_gallery), KarakiaAdapter.OnItemClickListener {
 
     private val viewModel by viewModels<KarakiaGalleryViewModel>()
 
