@@ -55,4 +55,6 @@ class KarakiaGalleryFragment : Fragment(R.layout.fragment_karakia_gallery), Kara
         viewModel.onKarakiaSelected(karakia)
     }
 
+
+
 }

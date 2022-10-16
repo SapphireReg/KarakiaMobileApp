@@ -1,8 +1,7 @@
 package com.example.karakiamobileapp
 
 import android.content.Context
-import android.graphics.ColorSpace
-import android.net.ConnectivityManager
+import android.content.res.AssetManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -10,9 +9,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.karakiamobileapp.ui.KarakiaAdapter
-import com.example.karakiamobileapp.ui.KarakiaDetailsFragment
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.InputStream
 
 
 @AndroidEntryPoint
@@ -30,12 +28,36 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
         }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
         }
-    
 
 
+    class CustomClass(context: Context) {
+        var assetManager : AssetManager = context.assets
+
+        fun readTextFileToString(fileName: String) : String {
+
+            val inputStream : InputStream = assetManager.open(fileName)
+            var fileText = ""
+            inputStream.bufferedReader().forEachLine { fileText += it + "\n" }
+            return fileText
+        }
+    }
 }
+//class MyActivity: AppCompatActivity() {
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//    }
+//
+//    fun readTextFileToString(fileName: String): String {
+//        val inputStream: InputStream = assets.open(fileName)
+//        var fileText = ""
+//        inputStream.bufferedReader().forEachLine { fileText += it + "\n" }
+//        return fileText
+//    }
+//}

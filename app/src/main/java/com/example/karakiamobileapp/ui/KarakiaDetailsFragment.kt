@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
+import com.example.karakiamobileapp.MainActivity
 import com.example.karakiamobileapp.R
 import com.example.karakiamobileapp.databinding.FragmentKarakiaDetailsBinding
 import java.io.*
@@ -31,21 +32,13 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
         binding.apply {
             val karakia = args.karakia
             var videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.videoResource)
-            var verseUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/"  + karakia.verses)
-            var englishUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.english)
 
-            fun readTextFileToString(uri: Uri): String {
-                val inputStream: InputStream = File(uri.path!!).inputStream()
-                var fileText = ""
-
-                inputStream.bufferedReader().forEachLine { fileText += it + "\n" }
-                return fileText
+            activity?.let { versesText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.verses.fileName)
+                            translationText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.english.fileName)
             }
 
             karakiaVideo.setVideoURI(videoUri)
             videoTitle.text = karakia.title
-            versesText.text = readTextFileToString(verseUri)
-            translationText.text = readTextFileToString(englishUri)
 
             versesHiddenView = view.findViewById(R.id.verses_text)
 
@@ -90,6 +83,8 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
                     translationButton.setImageResource(R.drawable.expand_more)
                 }
             }
+
+
         }
 
 

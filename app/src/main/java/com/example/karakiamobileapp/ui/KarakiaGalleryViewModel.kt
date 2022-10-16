@@ -3,6 +3,7 @@ package com.example.karakiamobileapp.ui
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import com.example.karakiamobileapp.MainActivity
 import com.example.karakiamobileapp.data.Karakia
 import com.example.karakiamobileapp.data.KarakiaDao
 import kotlinx.coroutines.channels.Channel
@@ -33,5 +34,6 @@ class KarakiaGalleryViewModel @ViewModelInject constructor(
     sealed class KarakiaEvent {
         data class NavigateToFragmentKarakiaDetails(val karakia: Karakia) : KarakiaEvent()
     }
+
 
 }
