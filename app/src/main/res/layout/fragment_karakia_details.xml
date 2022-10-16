@@ -96,7 +96,7 @@
         android:layout_below="@+id/verses_parent"
         android:background="#2B2B2B" />
 
-    <!--    Verses Clickable View  -->
+    <!--    Translation Clickable View  -->
     <androidx.cardview.widget.CardView
         android:id="@+id/english_parent"
         android:layout_width="match_parent"

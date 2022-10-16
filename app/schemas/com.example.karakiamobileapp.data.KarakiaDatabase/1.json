@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dbeed767e54220e99b7ecd18b5d1982a",
+    "identityHash": "1e62d1915a4b5f0e7ac4911a6b24059c",
     "entities": [
       {
         "tableName": "karakia_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`imageResource` INTEGER NOT NULL, `videoResource` INTEGER NOT NULL, `audioResource` INTEGER NOT NULL, `verses` TEXT NOT NULL, `english` TEXT NOT NULL, `title` TEXT NOT NULL, `shortDescription` TEXT NOT NULL, `longDescription` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`imageResource` INTEGER NOT NULL, `videoResource` INTEGER NOT NULL, `audioResource` INTEGER NOT NULL, `versesFileName` TEXT NOT NULL, `englishFileName` TEXT NOT NULL, `title` TEXT NOT NULL, `shortDescription` TEXT NOT NULL, `longDescription` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "imageResource",
@@ -27,14 +27,14 @@
             "notNull": true
           },
           {
-            "fieldPath": "verses",
-            "columnName": "verses",
+            "fieldPath": "versesFileName",
+            "columnName": "versesFileName",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "english",
-            "columnName": "english",
+            "fieldPath": "englishFileName",
+            "columnName": "englishFileName",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -76,7 +76,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dbeed767e54220e99b7ecd18b5d1982a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1e62d1915a4b5f0e7ac4911a6b24059c')"
     ]
   }
 }

@@ -1,20 +1,20 @@
 package com.example.karakiamobileapp.ui
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.karakiamobileapp.MainActivity
 import com.example.karakiamobileapp.data.Karakia
 import com.example.karakiamobileapp.data.KarakiaDao
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class KarakiaGalleryViewModel @ViewModelInject constructor(
+@HiltViewModel
+class KarakiaGalleryViewModel @Inject constructor(
     private val karakiaDao: KarakiaDao,
-    @Assisted private val state: SavedStateHandle
+    private val state: SavedStateHandle
 ) : ViewModel() {
 
     private val karakiaEventChannel = Channel<KarakiaEvent>()

@@ -13,18 +13,11 @@ data class Karakia(
     val imageResource: Int,
     val videoResource: Int,
     val audioResource: Int,
-    var verses: TextFile,
-    var english: TextFile,
-    var title: String,
-    var shortDescription: String,
-    var longDescription: String,
+    val versesFileName: String,
+    val englishFileName: String,
+    val title: String,
+    val shortDescription: String,
+    val longDescription: String,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
-) : Parcelable {
+) : Parcelable
 
-    @Parcelize
-    data class TextFile(
-        var fileName: String,
-        var title: String,
-        var content: String
-    ) : Parcelable
-}

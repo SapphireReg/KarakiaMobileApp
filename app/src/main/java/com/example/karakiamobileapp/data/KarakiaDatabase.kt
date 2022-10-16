@@ -28,33 +28,33 @@ abstract class KarakiaDatabase : RoomDatabase() {
 
             applicationScope.launch {
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
-                        "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
-                )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
                     "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
                     "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
                     "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
                     "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
-                    Karakia.TextFile("opening_karakia_timatanga_1_maori.txt", "Karakia Timatanga",""),
-                    Karakia.TextFile("opening_karakia_timatanga_1_english.txt", "Karakia Timatanga", ""),
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
+                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                )
+                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                    "opening_karakia_timatanga_1_maori.txt",
+                    "opening_karakia_timatanga_1_english.txt",
                     "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
                 )
             }

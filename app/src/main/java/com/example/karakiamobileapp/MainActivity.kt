@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
 
     class CustomClass(context: Context) {
-        var assetManager : AssetManager = context.assets
+        private var assetManager : AssetManager = context.assets
 
         fun readTextFileToString(fileName: String) : String {
 
