@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#181818"
+    android:orientation="vertical"
+    tools:context=".ui.AboutUsFragment">
+
+    <ImageView
+        android:id="@+id/about_us_group_photo"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/aviato_group_photo"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        />
+
+<!-- Wintec Karakia App-->
+    <LinearLayout
+        android:id="@+id/about_us_karakia_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wintec Karakia App"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=
+                "The Wintec Karaia App is a mobile app that helps people learn Wintec Karakia prayers and sing along"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:paddingBottom="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:padding="10dp"
+            android:background="#2B2B2B" />
+
+    </LinearLayout>
+
+<!-- The Team-->
+    <LinearLayout
+        android:id="@+id/about_us_the_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Team"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=
+                "Mobile Development - Reg \nTester - Jas \nContent Creator - Evan, Jdru \nPresenter/Helper - Peony, Kyle"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:paddingBottom="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:padding="10dp"
+            android:background="#2B2B2B" />
+
+    </LinearLayout>
+
+<!-- Disclaimer-->
+    <LinearLayout
+        android:id="@+id/about_us_disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding= "8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disclaimer"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=
+                "This Wintec Karakia App is a prototype version, created for Wintec staff and students.
+It is intended that staff and students shall use this app to learn Wintec Karakia and gain greater understanding of Karakias.
+Wintec takes no responsibility for outdated information containted within the apps"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:paddingBottom="10dp"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
