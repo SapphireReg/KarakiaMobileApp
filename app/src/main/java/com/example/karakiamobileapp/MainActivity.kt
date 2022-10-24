@@ -1,21 +1,21 @@
 package com.example.karakiamobileapp
 
+import android.app.ProgressDialog.show
 import android.content.Context
 import android.content.res.AssetManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.Window
-import androidx.annotation.ColorInt
-import androidx.appcompat.app.ActionBar
+import androidx.annotation.NonNull
+import androidx.core.content.edit
 import androidx.navigation.NavController
-import androidx.navigation.NavGraphNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.karakiamobileapp.ui.FirstOpenDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.InputStream
 
@@ -24,6 +24,7 @@ import java.io.InputStream
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        checkFirstRun()
         }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -55,6 +58,20 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
         }
+
+    fun checkFirstRun() {
+        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true)
+        if (isFirstRun) {
+
+            //dialog box here
+            val dialogbox = FirstOpenDialogFragment()
+            dialogbox.show(supportFragmentManager, "first use disclaimer")
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit {
+                putBoolean("isFirstRun", false)
+            }
+        }
+    }
 
 
     class CustomClass(context: Context) {

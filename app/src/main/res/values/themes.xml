@@ -6,13 +6,26 @@
         <item name="colorPrimaryVariant">@color/wintec_dyellow</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/wintec_yellow</item>
-        <item name="colorSecondaryVariant">@color/wintec_dyellow</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/wintec_yellow</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/wintec_yellow</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/wintec_yellow</item>
+    </style>
 
 </resources>
