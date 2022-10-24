@@ -4,10 +4,17 @@ import android.content.Context
 import android.content.res.AssetManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.Window
+import androidx.annotation.ColorInt
+import androidx.appcompat.app.ActionBar
 import androidx.navigation.NavController
+import androidx.navigation.NavGraphNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.InputStream
@@ -28,8 +35,22 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
         }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.aboutUs) {
+            val action = NavgraphDirections.actionGlobalAboutUsFragment()
+            navController.navigate(action)
+            true
+        } else {
+            item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+        }
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
@@ -48,16 +69,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-//class MyActivity: AppCompatActivity() {
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//    }
-//
-//    fun readTextFileToString(fileName: String): String {
-//        val inputStream: InputStream = assets.open(fileName)
-//        var fileText = ""
-//        inputStream.bufferedReader().forEachLine { fileText += it + "\n" }
-//        return fileText
-//    }
-//}

@@ -48,7 +48,6 @@ class KarakiaGalleryFragment : Fragment(R.layout.fragment_karakia_gallery), Kara
                 }.exhaustive
             }
         }
-//        setHasOptionsMenu(true)
     }
 
     override fun onItemClick(karakia: Karakia) {

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/karakiaGalleryFragment"
         android:name="com.example.karakiamobileapp.ui.KarakiaGalleryFragment"
-        android:label="Karakias"
+        android:label="Karakia Gallery"
         tools:layout="@layout/fragment_karakia_gallery">
         <action
             android:id="@+id/action_karakiaGalleryFragment_to_karakiaDetailsFragment"
@@ -17,9 +17,16 @@
     <fragment
         android:id="@+id/karakiaDetailsFragment"
         android:name="com.example.karakiamobileapp.ui.KarakiaDetailsFragment"
+        android:label="Karakia"
         tools:layout="@layout/fragment_karakia_details">
         <argument
             android:name="karakia"
             app:argType="com.example.karakiamobileapp.data.Karakia" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.karakiamobileapp.ui.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <action android:id="@+id/action_global_aboutUsFragment" app:destination="@id/aboutUsFragment" />
 </navigation>
