@@ -1,6 +1,5 @@
 package com.example.karakiamobileapp
 
-import android.app.ProgressDialog.show
 import android.content.Context
 import android.content.res.AssetManager
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +16,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.karakiamobileapp.ui.FirstOpenDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.InputStream
+import java.util.zip.Inflater
 
 
 @AndroidEntryPoint
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
         }
 
-    fun checkFirstRun() {
+    private fun checkFirstRun() {
         val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true)
         if (isFirstRun) {
 

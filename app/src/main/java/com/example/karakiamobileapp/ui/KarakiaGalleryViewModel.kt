@@ -20,9 +20,9 @@ class KarakiaGalleryViewModel @Inject constructor(
     private val karakiaEventChannel = Channel<KarakiaEvent>()
     val karakiaEvent = karakiaEventChannel.receiveAsFlow()
 
-    val searchQuery = state.getLiveData("searchQuery", "")
+    val currentQuery = state.getLiveData("CURRENT_QUERY", "")
 
-    private val karakiasFlow = searchQuery.asFlow().flatMapLatest { query -> karakiaDao.getKarakiaByTitle(query) }
+    private val karakiasFlow = currentQuery.asFlow().flatMapLatest { query -> karakiaDao.getKarakiaByTitle(query) }
 
     val karakias = karakiasFlow.asLiveData() //get karakias from database
 
@@ -34,6 +34,15 @@ class KarakiaGalleryViewModel @Inject constructor(
     sealed class KarakiaEvent {
         data class NavigateToFragmentKarakiaDetails(val karakia: Karakia) : KarakiaEvent()
     }
+
+    fun searchPhotos(query: String) {
+        currentQuery.value = query
+    }
+
+    companion object {
+        private const val CURRENT_QUERY = "current_query"
+    }
+
 
 
 }
