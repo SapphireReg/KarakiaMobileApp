@@ -7,7 +7,7 @@
     android:background="#181818"
     tools:context=".ui.KarakiaDetailsFragment">
 
-    <VideoView
+    <androidx.media2.widget.VideoView
         android:id="@+id/karakia_video"
         android:layout_width="match_parent"
         android:layout_height="200dp"

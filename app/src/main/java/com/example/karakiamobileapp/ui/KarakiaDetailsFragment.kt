@@ -1,10 +1,14 @@
 package com.example.karakiamobileapp.ui
 
+import android.content.res.Configuration
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.MediaController
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.transition.AutoTransition
@@ -19,6 +23,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
     //card views
     private lateinit var versesHiddenView: LinearLayout
     private lateinit var translationHiddenView: LinearLayout
+    private var mediaControls: MediaController? = null
 
     private val args by navArgs<KarakiaDetailsFragmentArgs>()
 
@@ -26,6 +31,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentKarakiaDetailsBinding.bind(view)
+        val mediaControls = MediaController(activity)
 
         binding.apply {
             val karakia = args.karakia
@@ -35,9 +41,13 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
                             translationText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.englishFileName)
             }
 
-            karakiaVideo.setVideoURI(videoUri)
-            videoTitle.text = karakia.title
+            //setting video view
+            karakiaVideo!!.setVideoURI(videoUri)
+            karakiaVideo!!.setMediaController(mediaControls)
 
+
+
+            videoTitle.text = karakia.title
             versesHiddenView = view.findViewById(R.id.hidden_verses)
 
             versesButton.setOnClickListener {
@@ -79,6 +89,4 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
 
 
     }
-
-
 }
