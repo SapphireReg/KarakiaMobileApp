@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.MediaController
@@ -23,7 +24,6 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
     //card views
     private lateinit var versesHiddenView: LinearLayout
     private lateinit var translationHiddenView: LinearLayout
-    private var mediaControls: MediaController? = null
 
     private val args by navArgs<KarakiaDetailsFragmentArgs>()
 
@@ -44,7 +44,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
             //setting video view
             karakiaVideo!!.setVideoURI(videoUri)
             karakiaVideo!!.setMediaController(mediaControls)
-
+            mediaControls!!.setAnchorView(karakiaVideo)
 
 
             videoTitle.text = karakia.title

@@ -91,15 +91,6 @@ dependencies {
     // DataStore
     implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
 
-    // videoView Media Player
-    def media2_version = "1.2.1"
-
-    // Interacting with MediaSessions
-    implementation "androidx.media2:media2-session:$media2_version"
-    // optional - UI widgets for VideoView and MediaControlView
-    implementation "androidx.media2:media2-widget:$media2_version"
-    // optional - Implementation of a SessionPlayer
-    implementation "androidx.media2:media2-player:$media2_version"
 }
 
 kapt {

@@ -7,18 +7,22 @@
     android:background="#181818"
     tools:context=".ui.KarakiaDetailsFragment">
 
-    <androidx.media2.widget.VideoView
-        android:id="@+id/karakia_video"
+    <RelativeLayout
+        android:id="@+id/video_view_parent"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@raw/vid1" />
-
+        android:layout_height="wrap_content">
+        <VideoView
+            android:id="@+id/karakia_video"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@raw/vid1" />
+    </RelativeLayout>
     <!--    Karakia Description / Info -->
     <RelativeLayout
         android:id="@+id/karakia_info"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_below="@id/karakia_video"
+        android:layout_below="@id/video_view_parent"
         android:padding="10dp">
 
         <TextView
