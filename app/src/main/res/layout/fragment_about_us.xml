@@ -104,10 +104,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=
-                "This Wintec Karakia App is a prototype version, created for Wintec staff and students.
-It is intended that staff and students shall use this app to learn Wintec Karakia and gain greater understanding of Karakias.
-Wintec takes no responsibility for outdated information containted within the apps"
+            android:text="@string/disclaimer"
             android:textColor="@color/white"
             android:textSize="12dp"
             android:paddingBottom="10dp"

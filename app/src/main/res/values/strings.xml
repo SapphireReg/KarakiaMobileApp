@@ -2,4 +2,8 @@
     <string name="app_name">KarakiaMobileApp</string>
     <string name="dialog_first_use">Disclaimer first use</string>
     <string name="accept">Accept</string>
+    <string name="disclaimer">The Karakia App is a Prototype version for Wintec Staff and Students. It is intended that staff and students shall use this to
+get an understanding of giving Karakia and information related to karakia. Karakia for Wintec - Te Pukenga may change
+accordingly making older versions redundant. Wintec – Te Pukenga takes no responsibility of outdated information
+displayed on the app.</string>
 </resources>
