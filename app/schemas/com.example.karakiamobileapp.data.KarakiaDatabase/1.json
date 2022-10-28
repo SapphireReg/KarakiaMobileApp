@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1e62d1915a4b5f0e7ac4911a6b24059c",
+    "identityHash": "b98df2add90ad0eab6c7427e4c7a02ab",
     "entities": [
       {
         "tableName": "karakia_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`imageResource` INTEGER NOT NULL, `videoResource` INTEGER NOT NULL, `audioResource` INTEGER NOT NULL, `versesFileName` TEXT NOT NULL, `englishFileName` TEXT NOT NULL, `title` TEXT NOT NULL, `shortDescription` TEXT NOT NULL, `longDescription` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`imageResource` INTEGER NOT NULL, `videoResource` INTEGER NOT NULL, `versesFileName` TEXT NOT NULL, `englishFileName` TEXT NOT NULL, `title` TEXT NOT NULL, `shortDescription` TEXT NOT NULL, `longDescription` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "imageResource",
@@ -17,12 +17,6 @@
           {
             "fieldPath": "videoResource",
             "columnName": "videoResource",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "audioResource",
-            "columnName": "audioResource",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -76,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1e62d1915a4b5f0e7ac4911a6b24059c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b98df2add90ad0eab6c7427e4c7a02ab')"
     ]
   }
 }

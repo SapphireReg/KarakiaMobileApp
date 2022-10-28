@@ -12,7 +12,6 @@ import java.nio.file.Path
 data class Karakia(
     val imageResource: Int,
     val videoResource: Int,
-    val audioResource: Int,
     val versesFileName: String,
     val englishFileName: String,
     val title: String,

@@ -27,35 +27,41 @@ abstract class KarakiaDatabase : RoomDatabase() {
             val dao = database.get().karakiaDao()
 
             applicationScope.launch {
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga1,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "Opening Karakia Timanga 1 (Opening)", "This is a short description of the Karakia",
+                    "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga2,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "Opening Karakia Timanga 2 (Opening)", "This is a short description of the Karakia",
+                    "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga1,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "Closing Karakia Whatamutunga 1 (Closing)", "This is a short description of the Karakia",
+                    "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga2,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "Karakia Whatamutunga 2 (Closing)", "This is a short description of the Karakia",
+                    "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.karakia_ki_te_kai_blessing_for_food,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "Karakia Ki Te Kai (Blessing for Food)", "This is a short description of the Karakia",
+                    "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.vid1, R.raw.audio1,
+                dao.insert(Karakia(R.drawable.test_image, R.raw.karakia_ki_te_kai_blessing_for_food,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Title1", "This is a short description of the Karakia", "This is a very very long description of the karakia")
+                    "How to use the App", "This video guides users on how to use the app",
+                    "This video guides users on how to use the app")
                 )
             }
 

@@ -15,7 +15,6 @@
             android:id="@+id/karakia_video"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@raw/vid1"
             android:layout_centerInParent="true"
             />
     </RelativeLayout>
@@ -150,6 +149,12 @@
                     </LinearLayout>
 
                     <!--    Divider Line -->
+                    <View
+                        android:id="@+id/group_divider_verse_trans"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/karakia_info"
+                        android:background="#2B2B2B" />
 
                     <!--    Translation Clickable View  -->
                     <androidx.cardview.widget.CardView
