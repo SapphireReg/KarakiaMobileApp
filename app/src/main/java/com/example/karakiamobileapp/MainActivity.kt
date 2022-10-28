@@ -48,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             val action = NavgraphDirections.actionGlobalAboutUsFragment()
             navController.navigate(action)
             true
+        } else if (item.itemId == R.id.getting_started) {
+            val action = NavgraphDirections.actionGlobalGettingStartedFragment()
+            navController.navigate(action)
+            true
         } else {
             item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }

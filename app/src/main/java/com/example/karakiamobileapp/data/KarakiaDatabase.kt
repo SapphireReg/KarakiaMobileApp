@@ -57,12 +57,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                     "Karakia Ki Te Kai (Blessing for Food)", "This is a short description of the Karakia",
                     "This is a very very long description of the karakia")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.karakia_ki_te_kai_blessing_for_food,
-                    "opening_karakia_timatanga_1_maori.txt",
-                    "opening_karakia_timatanga_1_english.txt",
-                    "How to use the App", "This video guides users on how to use the app",
-                    "This video guides users on how to use the app")
-                )
+
             }
 
         }

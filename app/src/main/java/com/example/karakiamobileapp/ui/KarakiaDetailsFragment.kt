@@ -40,7 +40,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
 
         binding.apply {
             val karakia = args.karakia
-            var videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.videoResource)
+            val videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + karakia.videoResource)
 
             activity?.let { versesText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.versesFileName)
                             translationText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.englishFileName)
