@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -71,7 +70,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     class CustomClass(context: Context) {
         private var assetManager : AssetManager = context.assets

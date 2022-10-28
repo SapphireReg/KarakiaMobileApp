@@ -1,15 +1,17 @@
 package com.example.karakiamobileapp.ui
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.Configuration
-import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
+import android.view.MotionEvent
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.MediaController
-import android.widget.TextView
-import android.widget.VideoView
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.transition.AutoTransition
@@ -17,6 +19,8 @@ import androidx.transition.TransitionManager
 import com.example.karakiamobileapp.MainActivity
 import com.example.karakiamobileapp.R
 import com.example.karakiamobileapp.databinding.FragmentKarakiaDetailsBinding
+import java.util.*
+import kotlin.concurrent.schedule
 
 
 class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
@@ -27,6 +31,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
 
     private val args by navArgs<KarakiaDetailsFragmentArgs>()
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,11 +46,14 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
                             translationText.text = MainActivity.CustomClass(it.applicationContext).readTextFileToString(karakia.englishFileName)
             }
 
-            //setting video view
-            karakiaVideo!!.setVideoURI(videoUri)
-            karakiaVideo!!.setMediaController(mediaControls)
-            mediaControls!!.setAnchorView(karakiaVideo)
-
+            if (karakia.videoResource!=null) {
+                //setting video view
+                karakiaVideo.setVideoURI(videoUri)
+                karakiaVideo.setMediaController(mediaControls)
+                mediaControls.setAnchorView(karakiaVideo)
+            } else {
+                Toast.makeText(context, "Video doesn't exist", Toast.LENGTH_SHORT).show()
+            }
 
             videoTitle.text = karakia.title
             versesHiddenView = view.findViewById(R.id.hidden_verses)
@@ -84,9 +92,46 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
                 }
             }
 
+            var videoContainer: RelativeLayout = view.findViewById(R.id.video_view_parent)
 
+            //show actionbar on touch
+            videoContainer.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
+                val actionBar = (activity as AppCompatActivity).supportActionBar
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_MOVE, MotionEvent.ACTION_DOWN, MotionEvent.ACTION_UP -> {
+                        val orientation = requireActivity().getResources().configuration.orientation
+                        if ((orientation == Configuration.ORIENTATION_LANDSCAPE) || !(actionBar?.isShowing)!!) {
+                            actionBar?.show()
+                        }
+                    }
+                }
+                return@OnTouchListener true
+            })
+        } //binding end
+    } //onViewCreated end
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        var videoView: VideoView = requireView().findViewById(R.id.karakia_video)
+        var karakiaInfoContainer: RelativeLayout = requireView().findViewById(R.id.karakia_info_container)
+
+        //fullscreen on landscape
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE ) {
+            videoView?.layoutParams!!.height = LinearLayout.LayoutParams.MATCH_PARENT
+            videoView.start()
+            karakiaInfoContainer.visibility = GONE
+            (activity as AppCompatActivity).supportActionBar?.hide()
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            videoView?.layoutParams!!.height = pxToDp(200)
+            karakiaInfoContainer.visibility = VISIBLE
         }
+    } //onConfigurationChanged end
 
+    fun pxToDp(px: Int): Int { //convert px to dp
+        val density = resources.displayMetrics.density
 
+        return Math.round(density * px)
     }
+
 }
