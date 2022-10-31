@@ -54,7 +54,7 @@ class KarakiaDetailsFragment : Fragment(R.layout.fragment_karakia_details) {
             } else {
                 Toast.makeText(context, "Video doesn't exist", Toast.LENGTH_SHORT).show()
             }
-
+            longDescription.text = karakia.longDescription
             videoTitle.text = karakia.title
             versesHiddenView = view.findViewById(R.id.hidden_verses)
 
