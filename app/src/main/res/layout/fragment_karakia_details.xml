@@ -11,12 +11,12 @@
         android:id="@+id/video_view_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <VideoView
             android:id="@+id/karakia_video"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_centerInParent="true"
-            />
+            android:layout_centerInParent="true" />
     </RelativeLayout>
     <!--    Karakia Description / Info -->
     <RelativeLayout
@@ -38,6 +38,7 @@
                 android:text="Karakia Title"
                 android:textColor="@color/white"
                 android:textSize="22sp"
+                android:textAlignment="center"
                 android:textStyle="bold" />
 
             <ScrollView
@@ -56,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/video_title"
                         android:text="Description is here"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
                 </LinearLayout>

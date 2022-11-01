@@ -27,27 +27,27 @@ abstract class KarakiaDatabase : RoomDatabase() {
             val dao = database.get().karakiaDao()
 
             applicationScope.launch {
-                dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga1,
+                dao.insert(Karakia(R.drawable.wintec_marae_entrance, R.raw.opening_karakia_timatanga1,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Opening Karakia Timatanga 1", "For beginning or starting a hui (meeting, event or gathering).",
+                    "Opening Karakia Timatanga 1", "For beginning a hui (meeting, event or gathering).",
                     "This Karakia is used when starting a hui (meeting, event or gathering).\n" +
                             "\n" +
                             "It’s a Karakia that includes all by drawing learners, staff, and everyone from around the world together under love and peace for as long as we remain.\n" +
                             "\n" +
                             "The last words, “Taiki E” (pronounced “tie key aye”) should be spoken by everyone in the group, as they are used to signal that the group is united and ready to move forward together.")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga2,
+                dao.insert(Karakia(R.drawable.wintec_students_marae, R.raw.opening_karakia_timatanga2,
                     "opening_karakia_timatanga_2_maori.txt",
                     "opening_karakia_timatanga_2_english.txt",
-                    "Opening Karakia Timatanga 2", "For beginning or starting a hui (meeting, event or gathering).",
+                    "Opening Karakia Timatanga 2", "For beginning a hui (meeting, event or gathering).",
                     "This Karakia is used when starting a hui (meeting, event or gathering).\n" +
                             "\n" +
                             "It’s a Karakia that means to prepare for what lies ahead, that the dawn will rise again, so come and join.\n" +
                             "\n" +
                             "The last words, “Taiki E” (pronounced “tie key aye”) should be spoken by everyone in the group, as they are used to signal that the group is united and ready to move forward together.")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga1,
+                dao.insert(Karakia(R.drawable.wintec_marae, R.raw.closing_karakia_whakamutunga1,
                     "closing_karakia_whakamutunga_1_maori.txt",
                     "closing_karakia_whakamutunga_1_english.txt",
                     "Closing Karakia Whakamutunga 1", "For ending a hui (meeting, event or gathering).",
@@ -57,7 +57,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                             "\n" +
                             "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the group is united and the ending of the Karakia.")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga2,
+                dao.insert(Karakia(R.drawable.wintec_marae_pillars, R.raw.closing_karakia_whakamutunga2,
                     "closing_karakia_whakamutunga_2_maori.txt",
                     "closing_karakia_whakamutunga_2_english.txt",
                     "Closing Karakia Whakamutunga 2", "For ending a hui (meeting, event or gathering).",
@@ -67,7 +67,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                             "\n" +
                             "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the group is united and the ending of the Karakia.")
                 )
-                dao.insert(Karakia(R.drawable.test_image, R.raw.karakia_ki_te_kai_blessing_for_food,
+                dao.insert(Karakia(R.drawable.maori_weaving, R.raw.karakia_ki_te_kai_blessing_for_food,
                     "karakia_ki_te_kai_maori.txt",
                     "karakia_ki_te_kai_english.txt",
                     "Karakia Ki Te Kai", "For blessing food.",
