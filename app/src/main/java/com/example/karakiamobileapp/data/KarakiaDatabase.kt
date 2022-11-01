@@ -30,32 +30,52 @@ abstract class KarakiaDatabase : RoomDatabase() {
                 dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga1,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Opening Karakia Timanga 1 (Opening)", "For beginning or starting meetings and gatherings.",
-                    "This is a very very long description of the karakia")
+                    "Opening Karakia Timatanga 1", "For beginning or starting a hui (meeting, event or gathering).",
+                    "This Karakia is used when starting a hui (meeting, event or gathering).\n" +
+                            "\n" +
+                            "It’s a Karakia that includes all by drawing learners, staff, and everyone from around the world together under love and peace for as long as we remain.\n" +
+                            "\n" +
+                            "The last words, “Taiki E” (pronounced “tie key aye”) should be spoken by everyone in the group, as they are used to signal that the group is united and ready to move forward together.")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga2,
-                    "opening_karakia_timatanga_1_maori.txt",
-                    "opening_karakia_timatanga_1_english.txt",
-                    "Opening Karakia Timanga 2 (Opening)", "This is a short description of the Karakia",
-                    "This is a very very long description of the karakia")
+                    "opening_karakia_timatanga_2_maori.txt",
+                    "opening_karakia_timatanga_2_english.txt",
+                    "Opening Karakia Timatanga 2", "For beginning or starting a hui (meeting, event or gathering).",
+                    "This Karakia is used when starting a hui (meeting, event or gathering).\n" +
+                            "\n" +
+                            "It’s a Karakia that means to prepare for what lies ahead, that the dawn will rise again, so come and join.\n" +
+                            "\n" +
+                            "The last words, “Taiki E” (pronounced “tie key aye”) should be spoken by everyone in the group, as they are used to signal that the group is united and ready to move forward together.")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga1,
-                    "opening_karakia_timatanga_1_maori.txt",
-                    "opening_karakia_timatanga_1_english.txt",
-                    "Closing Karakia Whatamutunga 1 (Closing)", "This is a short description of the Karakia",
-                    "This is a very very long description of the karakia")
+                    "closing_karakia_whakamutunga_1_maori.txt",
+                    "closing_karakia_whakamutunga_1_english.txt",
+                    "Closing Karakia Whakamutunga 1", "For ending a hui (meeting, event or gathering).",
+                    "This Karakia is used when ending a hui (meeting, event or gathering).\n" +
+                            "\n" +
+                            "It’s a Karakia that prays for the love of God and the fellowship of the Holy Spirit to be with everyone. A blessing for everyone to end the hui with.\n" +
+                            "\n" +
+                            "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the group is united and the ending of the Karakia.")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.closing_karakia_whakamutunga2,
-                    "opening_karakia_timatanga_1_maori.txt",
-                    "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Whatamutunga 2 (Closing)", "This is a short description of the Karakia",
-                    "This is a very very long description of the karakia")
+                    "closing_karakia_whakamutunga_2_maori.txt",
+                    "closing_karakia_whakamutunga_2_english.txt",
+                    "Closing Karakia Whakamutunga 2", "For ending a hui (meeting, event or gathering).",
+                    "This Karakia is used when ending a hui (meeting, even or gathering).\n" +
+                            "\n" +
+                            "It’s a Karakia that prays for honour, glory, and peace to the land. And that good thoughts come to all, forever and ever.\n" +
+                            "\n" +
+                            "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the group is united and the ending of the Karakia.")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.karakia_ki_te_kai_blessing_for_food,
-                    "opening_karakia_timatanga_1_maori.txt",
-                    "opening_karakia_timatanga_1_english.txt",
-                    "Karakia Ki Te Kai (Blessing for Food)", "This is a short description of the Karakia",
-                    "This is a very very long description of the karakia")
+                    "karakia_ki_te_kai_maori.txt",
+                    "karakia_ki_te_kai_english.txt",
+                    "Karakia Ki Te Kai", "For blessing food.",
+                    "This Karakia is used to bless Kai (food).\n" +
+                            "\n" +
+                            "It’s a Karakia that blesses the food that we’re about to receive for the goodness of our bodies, not only physically but spiritually.\n" +
+                            "\n" +
+                            "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the ending of the Karakia and that you may begin eating.")
                 )
 
             }
