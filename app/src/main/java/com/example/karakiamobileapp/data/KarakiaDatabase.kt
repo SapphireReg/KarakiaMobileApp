@@ -30,7 +30,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                 dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga1,
                     "opening_karakia_timatanga_1_maori.txt",
                     "opening_karakia_timatanga_1_english.txt",
-                    "Opening Karakia Timanga 1 (Opening)", "This is a short description of the Karakia",
+                    "Opening Karakia Timanga 1 (Opening)", "For beginning or starting meetings and gatherings.",
                     "This is a very very long description of the karakia")
                 )
                 dao.insert(Karakia(R.drawable.test_image, R.raw.opening_karakia_timatanga2,
