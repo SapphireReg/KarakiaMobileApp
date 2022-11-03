@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:paddingTop="8dp"
-            android:src="@drawable/test_image" />
+            android:src="@drawable/test_image"
+            android:scaleType="centerCrop"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Karakia Title"
-                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -38,7 +38,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/video_title"
                 android:text="Description is here"
-                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
