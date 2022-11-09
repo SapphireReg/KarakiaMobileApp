@@ -22,7 +22,7 @@ class GettingStartedFragment : Fragment (R.layout.fragment_getting_started) {
         val mediaControls = MediaController(activity)
         val videoPlayer: VideoView  = view.findViewById(R.id.video_player)
 
-        val videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + R.raw.opening_karakia_timatanga1)
+        val videoUri = Uri.parse("android.resource://" + activity?.packageName + "/raw/" + R.raw.getting_started_video)
 
 
         //show actionbar on touch
