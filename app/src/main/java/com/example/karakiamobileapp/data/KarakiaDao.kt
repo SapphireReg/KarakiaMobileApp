@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface KarakiaDao {
 
-    @Query("SELECT * FROM karakia_table WHERE title LIKE '%' || :searchQuery")
+    @Query("SELECT * FROM karakia_table WHERE title LIKE '%' || :searchQuery || '%' ")
     fun getKarakiaByTitle(searchQuery: String): Flow<List<Karakia>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
