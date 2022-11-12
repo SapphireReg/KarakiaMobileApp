@@ -47,7 +47,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                             "\n" +
                             "The last words, “Taiki E” (pronounced “tie key aye”) should be spoken by everyone in the group, as they are used to signal that the group is united and ready to move forward together.")
                 )
-                dao.insert(Karakia(R.drawable.wintec_marae, R.raw.closing_karakia_whakamutunga1,
+                dao.insert(Karakia(R.drawable.wintec_marae, R.raw.closing_karakia_whakamutunga2,
                     "closing_karakia_whakamutunga_1_maori.txt",
                     "closing_karakia_whakamutunga_1_english.txt",
                     "Closing Karakia Whakamutunga 1", "For ending a hui (meeting, event or gathering).",
@@ -57,7 +57,7 @@ abstract class KarakiaDatabase : RoomDatabase() {
                             "\n" +
                             "The last word, “Amine” (pronounced “ah men eh”) should be spoken by everyone in the group, it is used to acknowledge the group is united and the ending of the Karakia.")
                 )
-                dao.insert(Karakia(R.drawable.wintec_marae_pillars, R.raw.closing_karakia_whakamutunga2,
+                dao.insert(Karakia(R.drawable.wintec_marae_pillars, R.raw.closing_karakia_whakamutunga1,
                     "closing_karakia_whakamutunga_2_maori.txt",
                     "closing_karakia_whakamutunga_2_english.txt",
                     "Closing Karakia Whakamutunga 2", "For ending a hui (meeting, event or gathering).",
