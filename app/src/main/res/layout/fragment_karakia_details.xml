@@ -107,7 +107,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="10dp"
                                 android:layout_weight="9"
-                                android:text="Verses(Maori)"
+                                android:text="Verses(Māori)"
                                 android:textColor="@color/white"
                                 android:textSize="20sp" />
 
